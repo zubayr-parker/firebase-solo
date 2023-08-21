@@ -20,6 +20,7 @@ function App() {
         setUser(user);
         console.log(user.email);
       }
+      setLoading(false)
     });
   }, []);
 
@@ -56,9 +57,9 @@ function App() {
 
   return (
     <>
-      {user.email ? (
+      {loading ? (
         <>
-          {loading ? (
+          {user?.email  (
             "loading..."
           ) : (
             <button onClick={logout}>{user.email[0].toUpperCase()}</button>
